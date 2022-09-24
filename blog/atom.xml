@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Maszz.github.io/sf341-docs/blog</id>
-    <title>My Site Blog</title>
+    <title>Sf341-Docs Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Maszz.github.io/sf341-docs/blog"/>
-    <subtitle>My Site Blog</subtitle>
+    <subtitle>Sf341-Docs Blog</subtitle>
     <icon>https://Maszz.github.io/sf341-docs/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
