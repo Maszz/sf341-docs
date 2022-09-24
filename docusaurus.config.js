@@ -11,7 +11,7 @@ const config = {
   title: "My Site",
   tagline: "Dinosaurs are cool",
   url: "https://Maszz.github.io",
-  baseUrl: "/sf341/docs/",
+  baseUrl: "/sf341-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
