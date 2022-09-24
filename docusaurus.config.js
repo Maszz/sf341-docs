@@ -8,8 +8,9 @@ const spec = fs.readFileSync("./api.json", "utf-8");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "Sf341-Docs",
+  tagline:
+    "All the docs you need to get started with Sf341 project developments",
   url: "https://Maszz.github.io",
   baseUrl: "/sf341-docs/",
   onBrokenLinks: "throw",
@@ -59,7 +60,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "My Site",
+        title: "Sf341-Docs",
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg",
@@ -69,10 +70,10 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Tutorial",
+            label: "Docs",
           },
-          { to: "/blog", label: "Blog", position: "left" },
-          { to: "/api/docs", label: "Docs", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
+          { to: "/api/docs", label: "Api-Docs", position: "left" },
           {
             href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
