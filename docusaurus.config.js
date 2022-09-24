@@ -88,25 +88,17 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Introduction",
                 to: "/docs/intro",
               },
             ],
           },
           {
-            title: "Community",
+            title: "Contract",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: "Github",
+                href: "https://github.com/Maszz",
               },
             ],
           },
@@ -114,17 +106,21 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: "GitHub",
+                href: "https://github.com/Maszz",
               },
               {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                label: "BackEnd",
+                to: "https://github.com/Maszz/sf341-backend",
+              },
+              {
+                label: "FrontEnd",
+                to: "https://github.com/Maszz/sf341MobileApp",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} โปรเจคจ้องจะงับคุณ,Inc. Build with Docsaurus`,
       },
       prism: {
         theme: lightCodeTheme,
