@@ -111,11 +111,11 @@ const config = {
               },
               {
                 label: "BackEnd",
-                to: "https://github.com/Maszz/sf341-backend",
+                href: "https://github.com/Maszz/sf341-backend",
               },
               {
                 label: "FrontEnd",
-                to: "https://github.com/Maszz/sf341MobileApp",
+                href: "https://github.com/Maszz/sf341MobileApp",
               },
             ],
           },
