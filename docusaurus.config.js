@@ -29,6 +29,18 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
+  plugins: [
+    [
+      "@edno/docusaurus2-graphql-doc-generator",
+      {
+        schema: "./schema.graphql",
+        rootPath: "./", // docs will be generated under './docs/swapi' (rootPath/baseURL)
+        baseURL: "./docs/graphql",
+        homepage: "./docs/graphql/graphql.md",
+        diffMethod: "NONE",
+      },
+    ],
+  ],
 
   presets: [
     [

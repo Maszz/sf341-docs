@@ -1,0 +1,48 @@
+---
+id: get-message-input
+title: GetMessageInput
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+No description
+
+```graphql
+input GetMessageInput {
+  offset: Int
+  limit: Int
+  eventChatId: String
+}
+```
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>GetMessageInput.<b>offset</b></code>](#)<Bullet />[`Int`](/docs/graphql/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>GetMessageInput.<b>limit</b></code>](#)<Bullet />[`Int`](/docs/graphql/scalars/int) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>GetMessageInput.<b>eventChatId</b></code>](#)<Bullet />[`String`](/docs/graphql/scalars/string) <Badge class="secondary" text="scalar"/>
+> 
+> 
+
+
+
+### Member of
+
+[`getMessage`](/docs/graphql/queries/get-message)  <Badge class="secondary" text="query"/>
+
+
+

@@ -1,0 +1,40 @@
+---
+id: save-message
+title: saveMessage
+hide_table_of_contents: false
+---
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span class={'badge badge--' + props.class}>{props.text}</span></>
+
+
+No description
+
+```graphql
+saveMessage(
+  saveMessageData: SaveMessageInput!
+): Message!
+```
+
+
+### Arguments
+
+#### [<code style={{ fontWeight: 'normal' }}>saveMessage.<b>saveMessageData</b></code>](#)<Bullet />[`SaveMessageInput!`](/docs/graphql/inputs/save-message-input) <Badge class="secondary" text="non-null"/> <Badge class="secondary" text="input"/>
+> 
+> 
+
+### Type
+
+#### [`Message`](/docs/graphql/objects/message) <Badge class="secondary" text="object"/>
+> 
+> 
+
+
+
+
+
