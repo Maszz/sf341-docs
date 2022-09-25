@@ -65,7 +65,7 @@
           {
             "lang": "JavaScript",
             "label": "Node.js",
-            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3000/auth/signup', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      email: 'string',\n      username: 'string',\n      password: 'string',\n      name: 'string'\n    })\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3333/auth/signup', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      email: 'string',\n      username: 'string',\n      password: 'string',\n      name: 'string'\n    })\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
           }
         ]
       }
@@ -96,7 +96,14 @@
             }
           }
         },
-        "tags": ["Authentication"]
+        "tags": ["Authentication"],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "label": "Node.js",
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3333/auth/signin', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      username: 'string',\n      password: 'string'\n    })\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
+          }
+        ]
       }
     },
     "/auth/logout": {
@@ -113,12 +120,22 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "tags": ["Authentication"],
         "security": [
           {
             "bearer": []
+          }
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "label": "Node.js",
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3333/auth/logout', {\n    method: 'POST',\n    headers: {\n      Authorization: 'Bearer <YOUR_JWT_HERE>'\n    }\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
           }
         ]
       }
@@ -137,12 +154,39 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnAuthorizedResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcessDeniedResponse"
+                }
+              }
+            }
           }
         },
         "tags": ["Authentication"],
         "security": [
           {
             "bearer": []
+          }
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "label": "Node.js",
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3333/auth/refresh', {\n    method: 'POST',\n    headers: {\n      Authorization: 'Bearer <YOUR_JWT_HERE>'\n    }\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
           }
         ]
       }
@@ -153,13 +197,30 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": ""
+            "description": "Return User",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserFromJwtDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         },
         "tags": ["Authentication"],
         "security": [
           {
             "bearer": []
+          }
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "label": "Node.js",
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3333/auth/me', {\n    method: 'GET',\n    headers: {\n      Authorization: 'Bearer <YOUR_JWT_HERE>'\n    }\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
           }
         ]
       }
@@ -183,7 +244,14 @@
             }
           }
         },
-        "tags": ["User"]
+        "tags": ["User"],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "label": "Node.js",
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3333/user',\n  {method: 'GET'}\n );\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
+          }
+        ]
       }
     },
     "/user/{username}": {
@@ -211,7 +279,14 @@
             }
           }
         },
-        "tags": ["User"]
+        "tags": ["User"],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "label": "Node.js",
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const username = 'YOUR_username_PARAMETER';\n  const response = await fetch(`http://localhost:3333/user/${username}`,\n  {method: 'GET'}\n );\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
+          }
+        ]
       }
     },
     "/user/update/profile": {
@@ -269,7 +344,14 @@
             }
           }
         },
-        "tags": ["Event"]
+        "tags": ["Event"],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "label": "Node.js",
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3333/event/createEvent', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      eventName: 'string',\n      description: 'string'\n      location: 'string'\n      date: 'string'\n          creatorUsername: 'string'\n    })\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
+          }
+        ]
       }
     },
     "/event/addParticipant": {
@@ -298,7 +380,14 @@
             }
           }
         },
-        "tags": ["Event"]
+        "tags": ["Event"],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "label": "Node.js",
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3333/event/addParticipant', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      eventId: 'string',\n      useername: 'string'\n    })\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
+          }
+        ]
       }
     },
     "/event/removeParticipant": {
@@ -327,7 +416,14 @@
             }
           }
         },
-        "tags": ["Event"]
+        "tags": ["Event"],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "label": "Node.js",
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3333/event/removeParticipant', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      eventId: 'string',\n      useername: 'string'\n    })\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
+          }
+        ]
       }
     },
     "/event/getEvent/{eventId}": {
@@ -355,7 +451,14 @@
             }
           }
         },
-        "tags": ["Event"]
+        "tags": ["Event"],
+        "x-codeSamples": [
+          {
+            "lang": "JavaScript",
+            "label": "Node.js",
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const username = 'YOUR_eventId_PARAMETER';\n  const response = await fetch(`http://localhost:3333/user/${username}`,\n  {method: 'GET'}\n );\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
+          }
+        ]
       }
     }
   },
@@ -437,6 +540,51 @@
           }
         },
         "required": ["access_token", "refresh_token", "userId"]
+      },
+      "UnAuthorizedResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "number"
+          }
+        },
+        "required": ["message", "statusCode"]
+      },
+      "AcessDeniedResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "statusCode": {
+            "type": "number"
+          },
+          "error": {
+            "type": "string"
+          }
+        },
+        "required": ["message", "statusCode", "error"]
+      },
+      "UserFromJwtDto": {
+        "type": "object",
+        "properties": {
+          "sub": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "iat": {
+            "type": "number"
+          },
+          "exp": {
+            "type": "number"
+          }
+        },
+        "required": ["sub", "userId", "iat", "exp"]
       },
       "UserRespondDto": {
         "type": "object",
