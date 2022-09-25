@@ -65,7 +65,7 @@
           {
             "lang": "JavaScript",
             "label": "Node.js",
-            "source": "import fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3000/auth/signup', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      email: 'string',\n      username: 'string',\n      password: 'string',\n      name: 'string'\n    })\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
+            "source": "\nimport fetch from 'node-fetch';\n\nasync function run() {\n  const response = await fetch('http://localhost:3000/auth/signup', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      email: 'string',\n      username: 'string',\n      password: 'string',\n      name: 'string'\n    })\n  }\n);\n  const json = await response.json();\n  console.log(json);\n}\n\nrun();"
           }
         ]
       }
