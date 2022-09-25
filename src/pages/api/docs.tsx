@@ -16,6 +16,8 @@ export default function Home(): JSX.Element {
         <RedocStandalone
           spec={siteConfig.customFields.apiSpec as object}
           options={{
+            hideDownloadButton: true,
+            showObjectSchemaExamples: true,
             scrollYOffset: ".navbar", // makes the fixed sidebar and scrolling play nicey with docusaurus navbar
             theme: {
               colors: {
@@ -34,6 +36,18 @@ export default function Home(): JSX.Element {
                 code: {
                   lineHeight: "var(--ifm-pre-line-height)",
                   fontFamily: "var(--ifm-font-family-monospace)",
+                },
+              },
+              rightPanel: {
+                backgroundColor: "#52606D",
+                servers: {
+                  overlay: {
+                    backgroundColor: "#323f4b",
+                    // textColor: string;
+                  },
+                  url: {
+                    backgroundColor: "#52606d",
+                  },
                 },
               },
               sidebar: {

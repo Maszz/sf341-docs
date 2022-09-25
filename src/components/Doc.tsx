@@ -9,10 +9,13 @@ export default function Doc(): JSX.Element {
       spec={siteConfig.customFields.apiSpec as object}
       options={{
         scrollYOffset: ".navbar", // makes the fixed sidebar and scrolling play nicey with docusaurus navbar
+        hideDownloadButton: true,
+        showObjectSchemaExamples: true,
+
         theme: {
           colors: {
             primary: {
-              main: "#25c2a0",
+              main: "var(--ifm-color-primary)",
             },
           },
           typography: {
@@ -26,10 +29,14 @@ export default function Doc(): JSX.Element {
             code: {
               lineHeight: "var(--ifm-pre-line-height)",
               fontFamily: "var(--ifm-font-family-monospace)",
+              backgroundColor: "var(--ifm-code-background)",
             },
           },
           sidebar: {
             width: "300px", // about the same as the sidebar in the docs area, for consistency
+          },
+          rightPanel: {
+            backgroundColor: "#880808",
           },
         },
       }}

@@ -75,7 +75,7 @@ const config = {
           // { to: "/blog", label: "Blog", position: "left" },
           { to: "/api/docs", label: "Api-Docs", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/Maszz",
             label: "GitHub",
             position: "right",
           },
